@@ -1,6 +1,6 @@
 import random
 import numpy as np
-
+from kris_counter import counter_kris
 # Move mapping
 move_map = {'R': 0, 'P': 1, 'S': 2}
 reverse_map = {v: k for k, v in move_map.items()}
