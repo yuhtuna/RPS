@@ -46,11 +46,14 @@ def play(player1, player2, num_games, verbose=False):
 
 
 def quincy(prev_play, counter=[0]):
-
     counter[0] += 1
-    choices = ["R", "R", "P", "P", "S"]
-    return choices[counter[0] % len(choices)]
-
+    # Quincy’s strategy pattern: R, R, P, P, S, R, R, P, P, S, ...
+    if counter[0] % 5 == 0 or counter[0] % 5 == 1:
+        return "R"  # Counter for Rock
+    elif counter[0] % 5 == 2 or counter[0] % 5 == 3:
+        return "P"  # Counter for Paper
+    else:
+        return "S"  # Counter for Scissors
 
 def mrugesh(prev_opponent_play, opponent_history=[]):
     opponent_history.append(prev_opponent_play)
